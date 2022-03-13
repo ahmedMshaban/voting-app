@@ -1,9 +1,13 @@
 function ProductList() {
-  const product = Seed.products[0];
+  //Sort by # of votes
+  const products = Seed.products.sort((a, b) => {
+    return b.votes - a.votes;
+  });
 
-  return (
-    <div className="ui unstackable items">
+  const productComponents = products.map((product) => {
+    return (
       <Product
+        key={`product- ${product.id}`}
         id={product.id}
         title={product.title}
         description={product.description}
@@ -12,8 +16,9 @@ function ProductList() {
         submitterAvatarUrl={product.submitterAvatarUrl}
         productImageUrl={product.productImageUrl}
       />
-    </div>
-  );
+    );
+  });
+  return <div className="ui unstackable items">{productComponents}</div>;
 }
 
 function Product({
@@ -44,12 +49,7 @@ function Product({
         </div>
         <div className="extra">
           <span>Submitted by:</span>
-          <img
-            className="ui avatar image"
-            leanpub-start-insert
-            src={submitterAvatarUrl}
-            leanpub-end-insert
-          />
+          <img className="ui avatar image" src={submitterAvatarUrl} />
         </div>
       </div>
     </div>
