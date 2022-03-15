@@ -1,7 +1,6 @@
 {
   "name": "voting_app",
-  "version": "1.1.0",
-  "author": "Fullstack.io",
+  "version": "1.0.0",
   "scripts": {
     "go": "open http://localhost:3000; npm run server",
     "e2e": "nightwatch --config nightwatch.js",

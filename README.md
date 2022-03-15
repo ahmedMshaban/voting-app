@@ -1,3 +1,5 @@
+This app is a site like Product Hunt or Reddit. These sites have lists of links that users can vote on. Like those sites, in our app we can up-vote products. All products are sorted instantaneously by number of votes.
+
 ### Running the app
 
 1. Ensure you have `npm` installed.
